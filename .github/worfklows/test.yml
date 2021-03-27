@@ -6,8 +6,6 @@ name: Python package
 on:
   push:
     branches: [ ci/test ]
-  pull_request:
-    branches: [ ci/test ]
 
 jobs:
   build:
