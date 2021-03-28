@@ -2,7 +2,7 @@ import json
 from EasySAV.Domain.Intervention import Intervention
 from EasySAV.Repository.interventionRepository import InterventionRepository
 from EasySAV.Serializers.interventionSerializer import InterventionSerializer
-from EasySAV.controllers.interventionController import app
+from EasySAV.Controllers.interventionController import app
 
 #test = InterventionRepository()
 #test.get_interventions()

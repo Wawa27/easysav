@@ -2,7 +2,6 @@ import logging
 from EasySAV.Repository.connection_bdd import start
 
 
-
 class InterventionRepository:
     def __init__(self):
         self.database = start()
@@ -23,7 +22,8 @@ class InterventionRepository:
 
     def add_intervention(self, intervention):
         cursor = self.database.cursor()
-        cursor.execute(f"INSERT INTO intervention (id, client_id, piece, problem) VALUES ('{intervention.code}', '{intervention.ref_client}', '{intervention.piece}', '{intervention.probleme}')")
+        cursor.execute(
+            f"INSERT INTO intervention (id, client_id, piece, problem) VALUES ('{intervention.code}', '{intervention.ref_client}', '{intervention.piece}', '{intervention.probleme}')")
         try:
             self.database.commit()
             logging.info('Modification successfully made')
