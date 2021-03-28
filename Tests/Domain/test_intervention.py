@@ -1,5 +1,6 @@
 import uuid
-from EasySAV.EasySAV.Domain.Intervention import Intervention
+from EasySAV.Domain.Intervention import Intervention
+
 
 def test_intervention_model_init():
     code = uuid.uuid4()
@@ -9,14 +10,15 @@ def test_intervention_model_init():
     assert intervention.piece == "Lave linge"
     assert intervention.probleme == "fuite"
 
+
 def test_intervention_model_from_dict():
     code = uuid.uuid4()
     intervention = Intervention.from_dict(
         {
-            'code' : code,
-            'ref_client' : "IA42",
-            'piece' : "Lave linge",
-            'probleme' : "fuite"
+            'code': code,
+            'ref_client': "IA42",
+            'piece': "Lave linge",
+            'probleme': "fuite"
         }
     )
     assert intervention.code == code
@@ -28,11 +30,11 @@ def test_intervention_model_from_dict():
 def test_intervention_model_to_dict():
     code = uuid.uuid4()
     dico_intervention = {
-            'code' : code,
-            'ref_client' : "IA42",
-            'piece' : "Lave linge",
-            'probleme' : "fuite"
-        }
+        'code': code,
+        'ref_client': "IA42",
+        'piece': "Lave linge",
+        'probleme': "fuite"
+    }
 
     intervention = Intervention.from_dict(dico_intervention)
     assert intervention.to_dict() == dico_intervention

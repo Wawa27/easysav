@@ -1,8 +1,8 @@
 import mysql.connector
 import logging
 
-def start():
 
+def start():
     try:
         database = mysql.connector.connect(
             host="89.87.208.225",
@@ -13,5 +13,5 @@ def start():
         return database
 
     except:
-        logging.critical("Connection with the database failed")
+        logging.critical(" Connection with the database failed")
         exit()
