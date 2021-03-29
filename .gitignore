@@ -1,4 +1,3 @@
 .pytest_cache/
-instance/
 .idea/
 __pycache__

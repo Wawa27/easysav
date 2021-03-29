@@ -1,6 +1,7 @@
 import os
 import tempfile
 import pytest
+import json
 
 from easysav import app
 
@@ -17,6 +18,6 @@ def client():
     os.unlink(app.config['DATABASE'])
 
 
-def test_empty_db(client):
-    rv = client.get('/interventions')
-    assert b'No entries here so far' in rv.data
+def test_home(client):
+    rv = client.get('/')
+    assert rv.data == b'Hello world !'

@@ -6,8 +6,8 @@ app.config.from_object('config')
 app.config.from_pyfile('config.py')
 db = SQLAlchemy(app)
 
-from easysav.views import interventions
-from easysav.views import home
+from easysav.controllers import interventions
+from easysav.controllers import home
 
 app.route(interventions)
 app.route(home)
